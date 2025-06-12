@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div>
+      <form action="/" method="post">
+        <h1>Registration Form</h1>
+        <div class="container">
+          <div class="name-div common-style">
+            <label for="name">Enter Name:</label>
+            <input type="text" name="name" id="name" />
+          </div>
+          <div class="email-div common-style">
+            <label for="email">Enter Email:</label>
+            <input type="email" name="email" id="email" />
+          </div>
+          <div class="mob-div common-style">
+            <label for="mob">Enter mobile no.:</label>
+            <input type="tel" name="mob" id="mob" />
+          </div>
+          <div class="submit common-style">
+            <button type="submit" id="subit-btn">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="queryResults">
+      <% if (records && records.length !== 0) { %>
+      <h2>Database Records</h2>
+      <ul>
+        <% records.forEach(record => { %>
+        <li>Name: <%= record.cname %>|</li>
+        <li>Email: <%= record.email %>|</li>
+        <li>Mob: <%= record.mob %></li>
+        <% }) %>
+      </ul>
+      <% } %>
+    </div>
+  </body>
+</html>
